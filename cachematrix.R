@@ -29,7 +29,7 @@ library(MASS)
 cacheSolve <- function(x, ...) {
   ## Return a matrix that is the inverse of 'x'
   
-  ip<-x$getinv()
+  inv<-x$getinv()
   if(!is.null(inv)){
     message("getting cached data")
     return(inv)
@@ -39,7 +39,7 @@ cacheSolve <- function(x, ...) {
   
   data<-x$get()
   inv<-solve(data,...)
-  x$setip(inv)
+  x$setinv(inv)
   inv
 }
 
